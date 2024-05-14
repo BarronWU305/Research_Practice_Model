@@ -19,7 +19,7 @@ import sklearn.model_selection as sklearnmodels
 #       os.symlink(src_dir, dst_dir)
 
 
-src = "/home/acc.millerh9/csci460-sp24-project2-wuPhoeMiller/Chakrabarty"
+src = "/home/acc.millerh9/csci460-sp24-project2-wuPhoeMiller/Chakrabarty/"
 dst = "/home/acc.millerh9/Research_Practice_Model/"
 
 def ensure_symbolic_link(src, dst):
