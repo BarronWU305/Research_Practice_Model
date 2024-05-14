@@ -19,8 +19,16 @@ import sklearn.model_selection as sklearnmodels
 #       os.symlink(src_dir, dst_dir)
 
 
-dst = "/data/csci460"
-src = "/home/acc.millerh9/Research_Practice_Model/"
+src = "/home/acc.millerh9/csci460-sp24-project2-wuPhoeMiller/Chakrabarty"
+dst = "/home/acc.millerh9/Research_Practice_Model/"
+
+def ensure_symbolic_link(src, dst):
+    """
+    Ensure a symbolic link from src to dst exists.
+    """
+    if not os.path.exists(dst):
+        os.symlink(src, dst)
+
 
 def readImageDirectory(basedir, classDict, imageSize=None, quiet=True, testRatio=0.33):
   """
@@ -41,9 +49,12 @@ def readImageDirectory(basedir, classDict, imageSize=None, quiet=True, testRatio
   imagesY = [] 
 
   for classKey in classDict:
-    dirName = os.symlink(src,dst)
+        dirName = os.path.join(basedir, classKey)
 
-    for filename in os.listdir(dirName):
+        if not os.path.exists(dirName):
+            os.makedirs(dirName)  # Make sure the directory exists
+
+  for filename in os.listdir(dirName):
         # Filename name is the base name + class name + image file name
         fn = os.path.join(dirName, filename)
 
