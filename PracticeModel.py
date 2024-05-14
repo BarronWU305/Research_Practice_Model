@@ -120,3 +120,6 @@ trainingHistory = model.fit(trainX, trainY, epochs=10)
 
 # Show the testing accuracy over the un-thresholded model:
 model.evaluate(testX, testY)
+
+
+##come back and fix anything that we need to fix and make the code ours.
