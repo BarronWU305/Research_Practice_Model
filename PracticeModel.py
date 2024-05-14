@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os, sys
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
@@ -123,3 +124,6 @@ model.evaluate(testX, testY)
 
 
 ##come back and fix anything that we need to fix and make the code ours.
+=======
+
+>>>>>>> 050b1e8022abb96797d1a64bd9e072ba23207fbb
