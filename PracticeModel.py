@@ -7,6 +7,21 @@ import numpy as np
 import sklearn.model_selection as sklearnmodels
 
 
+#lee tries here
+# src = "/data/csci460"
+# dst = "/home/acc.millerh9/Research_Practice_Model/"
+
+# def create_symbolic_links(src_dir, dst_dir):
+#   """
+#   Create links
+#   """
+#   if not os.path.exists(dst_dir):
+#       os.symlink(src_dir, dst_dir)
+
+
+dst = "/data/csci460"
+src = "/home/acc.millerh9/Research_Practice_Model/"
+
 def readImageDirectory(basedir, classDict, imageSize=None, quiet=True, testRatio=0.33):
   """
   Take a base directory and a dictionary of class values,
@@ -17,12 +32,17 @@ def readImageDirectory(basedir, classDict, imageSize=None, quiet=True, testRatio
   label Y vector.  If a tuple (x,y) imageSize is given,
   then enforce all the images are of a specific size.
   """
+
+  # create_symbolic_links(os.path.join(basedir, "BTD"), os.path.join(dst, "BTD"))
+  # create_symbolic_links(os.path.join(basedir, "Chakrabarty"), os.path.join(dst, "Chakrabarty"))
+
   # Initialize the X tensor and the Y vector raw structures
   imagesX = []
-  imagesY = []
+  imagesY = [] 
 
   for classKey in classDict:
-    dirName = os.path.join(basedir, classKey)
+    dirName = os.symlink(src,dst)
+
     for filename in os.listdir(dirName):
         # Filename name is the base name + class name + image file name
         fn = os.path.join(dirName, filename)
